@@ -62,7 +62,71 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public Customers update(Customers customer, long id) {
-        return null;
+    public Customers update(Customers customer, long id)
+    {
+       Customers currentCustomer = custrepos.findById(id)
+               .orElseThrow(() -> new EntityNotFoundException(Long.toString(id)));
+
+       if(customer.getCustname() != null)
+       {
+           currentCustomer.setCustname(customer.getCustname());
+       }
+
+        if(customer.getCustcity() != null)
+        {
+            currentCustomer.setCustcity(customer.getCustcity());
+        }
+
+        if(customer.getWorkingarea() != null)
+        {
+            currentCustomer.setWorkingarea(customer.getWorkingarea());
+        }
+
+        if(customer.getCustcountry() != null)
+        {
+            currentCustomer.setCustcountry(customer.getCustcountry());
+        }
+
+        if(customer.getGrade() != null)
+        {
+            currentCustomer.setGrade(customer.getGrade());
+        }
+
+        if(customer.getOpeningamt() == 0.0)
+        {
+            currentCustomer.setOpeningamt(customer.getOpeningamt());
+        }
+
+        if(customer.getReceiveamt() == 0.0)
+        {
+            currentCustomer.setReceiveamt(customer.getReceiveamt());
+        }
+
+        if(customer.getPaymentamt() == 0.0)
+        {
+            currentCustomer.setPaymentamt(customer.getPaymentamt());
+        }
+
+        if(customer.getOutstandingamt() == 0.0)
+        {
+            currentCustomer.setOutstandingamt(customer.getOutstandingamt());
+        }
+
+        if(customer.getPhone() != null)
+        {
+            currentCustomer.setPhone(customer.getPhone());
+        }
+
+        if(customer.getGrade() != null)
+        {
+            currentCustomer.setGrade(customer.getGrade());
+        }
+
+        if(customer.getAgent() != null)
+        {
+            currentCustomer.setAgent((customer.getAgent()));
+        }
+
+        return custrepos.save(currentCustomer);
     }
 }

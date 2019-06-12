@@ -58,4 +58,16 @@ public class CustomersController
 
         return new ResponseEntity<>(null, responseHeaders, HttpStatus.CREATED);
     }
+
+    @PutMapping(value = "/data/update/{customerid}",
+            consumes = {"application/json"})
+    public ResponseEntity<?> updateCustomerById(
+            @RequestBody
+                    Customers updateCustomer,
+            @PathVariable
+                    long customerid)
+    {
+        customerService.update(updateCustomer, customerid);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
