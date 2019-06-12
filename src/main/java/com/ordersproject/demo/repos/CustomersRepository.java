@@ -1,8 +1,9 @@
-package javaorder.order.repos;
+package com.ordersproject.demo.repos;
 
+import com.ordersproject.demo.model.Customers;
 import org.springframework.data.repository.CrudRepository;
-import javaorder.order.model.Customers;
 
 public interface CustomersRepository extends CrudRepository<Customers, Long>
 {
+    Customers findCustomersByCustname(String name);
 }

@@ -1,4 +1,4 @@
-package javaorder.order.model;
+package com.ordersproject.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

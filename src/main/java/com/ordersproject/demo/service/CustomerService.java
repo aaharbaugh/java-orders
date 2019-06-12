@@ -1,6 +1,6 @@
-package javaorder.order.service;
+package com.ordersproject.demo.service;
 
-import javaorder.order.model.Customers;
+import com.ordersproject.demo.model.Customers;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ public interface CustomerService
 {
     ArrayList<Customers> findAll();
 
-    Customers findCustomerByName(String name);
+    Customers findCustomersByCustname(String custname);
 
     void delete(long id);
 

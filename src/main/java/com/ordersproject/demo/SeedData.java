@@ -1,11 +1,11 @@
-package javaorder.order;
+package com.ordersproject.demo;
 
-import javaorder.order.model.Customers;
-import javaorder.order.model.Orders;
-import javaorder.order.model.Agents;
-import javaorder.order.repos.AgentsRepository;
-import javaorder.order.repos.CustomersRepository;
-import javaorder.order.repos.OrdersRepository;
+import com.ordersproject.demo.model.Agents;
+import com.ordersproject.demo.model.Customers;
+import com.ordersproject.demo.model.Orders;
+import com.ordersproject.demo.repos.AgentsRepository;
+import com.ordersproject.demo.repos.CustomersRepository;
+import com.ordersproject.demo.repos.OrdersRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
